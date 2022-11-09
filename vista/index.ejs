@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Registrar chofer</h1>
+    <form action="/chofer" method="POST">
+
+        <input type="text" name="id" placeholder="Ingresa el ID" /><br />
+        <input type="text" name="nombre" placeholder="Ingresa el nombre del chofer" /><br />
+        <input type="submit" />
+    </form>
+
+    <h1>Eliminar chofer</h1>
+
+    <form action="/eliminarchofer">
+        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
+        <input type="submit" />
+    </form>
+
+    <h1>Registrar Pedido</h1>
+    <form action="/pedido" , method="POST">
+        <input type="text" name="preciokg" placeholder="Ingresa el precio por kilo" /><br />
+        <input type="submit" />
+    </form>
+
+    <h1>Eliminar Pedido</h1>
+    <form action="/eliminarpedido">
+        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
+        <input type="submit" />
+    </form>
+
+    <h1>Registrar Camion</h1>
+    <form action="/camion" , method="POST">
+        <input type="text" name="placas" placeholder="Ingresa las placas del camion" /><br />
+        <input type="text" name="marca" placeholder="Ingresa la marca del camion" /><br />
+        <input type="text" name="color" placeholder="Ingresa el color del camion" /><br />
+        <input type="submit" />
+    </form>
+
+    <h1>Eliminar Camion</h1>
+    <form action="/eliminarcamion">
+        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
