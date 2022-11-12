@@ -11,13 +11,14 @@
 <body>
 
     <h1>Registrar chofer</h1>
-    <form action="/chofer" method="POST">
+    
 
         <input type="text" name="id" placeholder="Ingresa el ID" /><br />
         <input type="text" name="nombre" placeholder="Ingresa el nombre del chofer" /><br />
         <input type="submit" />
-    </form>
-
+    
+        <button></button>
+        <br>
     <h1>Eliminar chofer</h1>
 
     <form action="/eliminarchofer">
@@ -26,10 +27,32 @@
     </form>
 
     <h1>Registrar Pedido</h1>
-    <form action="/pedido" , method="POST">
-        <input type="text" name="preciokg" placeholder="Ingresa el precio por kilo" /><br />
-        <input type="submit" />
-    </form>
+
+        <input type="text" name="npedido" id="npedido" placeholder="Ingresa el numero de pedido" /><br />
+        <input type="number" name="preciokg"  id="preciokg" placeholder="Ingresa el precio por kilo" /><br />
+        <input type="button" id="bregistrar" name="bregistrar" value="Registrar pedido">
+    
+
+        <script>
+            //Script para registrar el pedido
+            const bregistrar = document.querySelector("#bregistrar")
+            bregistrar.addEventListener('click', () => {
+              //Validar campos
+              const npedido = document.getElementById('npedido').value
+              const preciokg = document.getElementById('preciokg').value
+              console.log(npedido + "  " +preciokg);
+              if (preciokg.trim() === '' || npedido.trim() === '') return false;
+              fetch('/post-pedido', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({ preciokg:preciokg, npedido:npedido })
+              }).then(res => res.text())
+                .then(data => {
+                  alert(data)
+                })
+            })
+          </script>
+
 
     <h1>Eliminar Pedido</h1>
     <form action="/eliminarpedido">

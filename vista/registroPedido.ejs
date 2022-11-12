@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <title>Registrar pedido</title>
+  <title>Registrar pedido</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
 
 TemplateMo 580 Woox Travel
 
 https://templatemo.com/tm-580-woox-travel
 
 -->
-  </head>
+</head>
 
 <body>
 
@@ -46,22 +47,22 @@ https://templatemo.com/tm-580-woox-travel
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="registroCamion.html">Registrar Camión</a></li>
-                        <li><a href="registroPedido.html" class="active">Registrar Pedido</a></li>
-                        <li><a href="registroChofer.html">Registrar Chofer</a></li> 
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="registroCamion.ejs">Registrar Camión</a></li>
+              <li><a href="registroPedido.ejs" class="active">Registrar Pedido</a></li>
+              <li><a href="registroChofer.ejs">Registrar Chofer</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
+      </div>
     </div>
   </header>
 
@@ -75,11 +76,17 @@ https://templatemo.com/tm-580-woox-travel
                 <h4>Registrar Pedido</h4>
               </div>
               <div class="col-lg-6">
-                  <fieldset>
-                      <label for="Preciokg" class="form-label">Precio por Kg</label>
-                      <input type="number" name="Preciokg" class="Preciokg" placeholder="Kg" autocomplete="on" required>
-                  </fieldset>
+                <fieldset>
+                  <label for="Numero de pedido" class="form-label">Precio por Kg</label>
+                  <input type="text" id="npedido" name="npedido" class="npedido"
+                    placeholder="Ingrese el numero de pedido" autocomplete="on" required>
+                  <label for="Preciokg" class="form-label">Precio por Kg</label>
+                  <input type="number" step="0.1" id="preciokg" name="preciokg" class="Preciokg" placeholder="Kg"
+                    autocomplete="on" required>
+                </fieldset>
               </div>
+
+
               <!--
               <div class="col-lg-6">
                 <fieldset>
@@ -117,10 +124,11 @@ https://templatemo.com/tm-580-woox-travel
                       </select>
                   </fieldset>
               </div>-->
-              <div class="col-lg-12">                        
-                  <fieldset>
-                      <button class="main-button">Registrar</button>
-                  </fieldset>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button class="main-button" id="bregistrar">Registrar</button>
+                </fieldset>
+
               </div>
             </div>
           </form>
@@ -133,7 +141,7 @@ https://templatemo.com/tm-580-woox-travel
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2022<a href="#"> GuasaveSoft</a> Company. All rights reserved. 
+          <p>Copyright © 2022<a href="#"> GuasaveSoft</a> Company. All rights reserved.
         </div>
       </div>
     </div>
@@ -153,12 +161,12 @@ https://templatemo.com/tm-580-woox-travel
   <script src="assets/js/custom.js"></script>
 
   <script>
-    $(".option").click(function(){
+    $(".option").click(function () {
       $(".option").removeClass("active");
-      $(this).addClass("active"); 
+      $(this).addClass("active");
     });
   </script>
 
-  </body>
+</body>
 
 </html>

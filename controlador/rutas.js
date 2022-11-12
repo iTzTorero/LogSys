@@ -42,9 +42,10 @@ rutas.get('/eliminarchofer', async (req, res) => {
 })
 
 //Insertar pedido
-rutas.post('/pedido', async(req,res)=>{
-    pedido.registrarPedido(req.body.preciokg)
-    res.redirect("/")
+rutas.post('/post-pedido', async(req,res)=>{
+  // pedido.registrarPedido(req.body.preciokg)
+  console.log(req.body);  
+  console.log(req.query);  
 })
 
 //Eliminar Pedido
