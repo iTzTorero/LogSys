@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "admin",
+        "password": "R575859t595857",
+        "database": "Logsys",
+        "host": "logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "admin",
+        "password": "R575859t595857",
+        "database": "Logsys",
+        "host": "logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "root",
+        "password": null,
+        "database": "database_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+  }

@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 var conexion = mysql.createConnection({
     host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
     user: 'admin',

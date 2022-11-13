@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 var conexion = mysql.createConnection({
     host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
     user: 'admin',
@@ -11,7 +11,7 @@ conexion.connect((err)=>{
         console.log("Error al conectar a la base de datos "+err);
     }else{
         console.log("Conectado a base de datos");
-  
+        
     }
 });
 
@@ -34,7 +34,7 @@ exports.eliminarChofer=(id)=>{
 }
 
 exports.consultarChoferes=()=>{
-    
+
 }
 
 

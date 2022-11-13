@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const mysql = require('mysql')
+const mysql = require('mysql2')
+const port = 3000;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -12,7 +13,7 @@ app.set('view engine', 'ejs')
 const indiceRutas = require('./controlador/rutas')
 app.use('/', indiceRutas)
 
-app.listen(3000, () => {
-    console.log('express Corriendo en el puerto 3000');
+app.listen(port, () => {
+    console.log(`RESTful server running at http://127.0.0.1:${port}`);
 
 })

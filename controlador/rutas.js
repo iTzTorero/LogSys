@@ -65,4 +65,7 @@ rutas.get('/eliminarcamion', async(req,res)=>{
     camion.eliminarCamion(req.query.idEliminar)
     res.redirect("/")
 })
+
+rutas.get('/camion', )
+
 module.exports = rutas;
