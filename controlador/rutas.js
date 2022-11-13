@@ -7,11 +7,11 @@ const camion = require('../modelo/camion')
 
 // funciones midleware
 rutas.use(function(req, res, next){
-    if (req.query._method == "PUT") {
+    if (req.body.method == "PUT") {
         req.method='PUT'
         req.url = req.path;
     } 
-    if (req.query._method == "DELETE") {
+    if (req.body.method == "DELETE") {
         req.method='DELETE'
         req.url = req.path
     } 
@@ -28,41 +28,43 @@ rutas.get('/', async (req, res) => {
 });
 
 //Insertar chofer
-rutas.post('/chofer', async (req, res) => {
+rutas.post('/post-chofer', async (req, res) => {
     chofer.registrarChofer(req.body.nombre)
-    res.redirect("/");
-
+    res.setHeader('Content-type', 'text/applicationjson')
+    res.send(JSON.stringify({ result: "Chofer registrado correctamente" }))
 })
 
 //Eliminar chofer
-rutas.get('/eliminarchofer', async (req, res) => {
-    chofer.eliminarChofer(req.query.idEliminar)
-    res.redirect("/");
+rutas.delete('/delete-chofer', async (req, res) => {
+    chofer.eliminarChofer(req.body.idchofer)
+    res.send(JSON.stringify({ result: "Chofer eliminado correctamente" }))
 
 })
 
 //Insertar pedido
 rutas.post('/post-pedido', async(req,res)=>{
-  // pedido.registrarPedido(req.body.preciokg)
-  console.log(req.body);  
-  console.log(req.query);  
+  pedido.registrarPedido(req.body.preciokg, req.body.npedido) 
+  res.setHeader('Content-type', 'text/applicationjson')
+  res.send(JSON.stringify({ result: "Pedido registrado correctamente" }))
+
 })
 
 //Eliminar Pedido
-rutas.get('/eliminarpedido', async(req,res)=>{
-    pedido.eliminarPedido(req.query.idEliminar)
-    res.redirect("/")
-})
+rutas.delete('/delete-pedido', async(req,res)=>{
+    pedido.eliminarPedido(req.body.idpedido)
+    res.setHeader('Content-type', 'text/applicationjson')
+    res.send(JSON.stringify({ result: "Pedido eliminado correctamente" }))})
 
 //Insertar camion
-rutas.post("/camion", async(req,res)=>{
+rutas.post("/post-camion", async(req,res)=>{
     camion.registrarCamion(req.body.placas, req.body.marca,req.body.color)
-    res.redirect("/")
-})
+    res.setHeader('Content-type', 'text/applicationjson')
+    res.send(JSON.stringify({ result: "Camion registrado correctamente" }))})
 
 //Eliminar Camion
-rutas.get('/eliminarcamion', async(req,res)=>{
-    camion.eliminarCamion(req.query.idEliminar)
-    res.redirect("/")
-})
+rutas.delete('/delete-camion', async(req,res)=>{
+    camion.eliminarCamion(req.body.idcamion)
+    res.setHeader('Content-type', 'text/applicationjson')
+    res.send(JSON.stringify({ result: "Camion eliminado correctamente" }))})
+
 module.exports = rutas;

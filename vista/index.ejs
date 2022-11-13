@@ -13,30 +13,64 @@
     <h1>Registrar chofer</h1>
     
 
-        <input type="text" name="id" placeholder="Ingresa el ID" /><br />
-        <input type="text" name="nombre" placeholder="Ingresa el nombre del chofer" /><br />
-        <input type="submit" />
+        <input type="text" name="nombrechofer" id="nombrechofer" placeholder="Ingresa el nombre del chofer" /><br />
+        <input type="button" id="bregistrarchofer" name="bregistrarchofer" value="Registrar chofer">
     
-        <button></button>
+        <script>
+            //Script para registrar chofer
+            const bregistrarchofer = document.querySelector("#bregistrarchofer")
+            bregistrarchofer.addEventListener('click', () => {
+              //Validar campos
+              const nombrechofer = document.getElementById('nombrechofer').value
+              console.log(npedido + "  " +preciokg);
+              if (nombrechofer.trim() === '') return false;
+              fetch('/post-chofer', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({nombre:nombrechofer})
+              }).then(res => res.json())
+                .then(data => {
+                  alert(data.result)
+                })
+            })
+          </script>
         <br>
     <h1>Eliminar chofer</h1>
 
     <form action="/eliminarchofer">
-        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
-        <input type="submit" />
+        <input type="text" name="idchofer" id="idchofer" placeholder="Ingresa el ID" /><br />
+        <input type="button" id="beliminarchofer" name="beliminarchofer" value="Eliminar chofer">
     </form>
+
+    <script>
+        //Script para eliminar chofer
+        const beliminarchofer = document.querySelector("#beliminarchofer")
+        beliminarchofer.addEventListener('click', () => {
+          //Validar campos
+          const idchofer = document.getElementById('idchofer').value
+          if (idchofer.trim() === '') return false;
+          fetch('/delete-chofer', {
+            method: 'DELETE',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({idchofer:idchofer})
+          }).then(res => res.json())
+            .then(data => {
+              alert(data.result)
+            })
+        })
+      </script>
 
     <h1>Registrar Pedido</h1>
 
         <input type="text" name="npedido" id="npedido" placeholder="Ingresa el numero de pedido" /><br />
         <input type="number" name="preciokg"  id="preciokg" placeholder="Ingresa el precio por kilo" /><br />
-        <input type="button" id="bregistrar" name="bregistrar" value="Registrar pedido">
+        <input type="button" id="bregistrarpedido" name="bregistrarpedido" value="Registrar pedido">
     
 
         <script>
             //Script para registrar el pedido
-            const bregistrar = document.querySelector("#bregistrar")
-            bregistrar.addEventListener('click', () => {
+            let bregistrarpedido = document.querySelector("#bregistrarpedido")
+            bregistrarpedido.addEventListener('click', () => {
               //Validar campos
               const npedido = document.getElementById('npedido').value
               const preciokg = document.getElementById('preciokg').value
@@ -46,9 +80,9 @@
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify({ preciokg:preciokg, npedido:npedido })
-              }).then(res => res.text())
+              }).then(res => res.json())
                 .then(data => {
-                  alert(data)
+                  alert(data.result)
                 })
             })
           </script>
@@ -56,23 +90,80 @@
 
     <h1>Eliminar Pedido</h1>
     <form action="/eliminarpedido">
-        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
-        <input type="submit" />
+        <input type="text" name="idpedido" id="idpedido" placeholder="Ingresa el ID" /><br />
+        <input type="button" id="beliminarpedido" name="beliminarpedido" value="Eliminar pedido">
     </form>
+
+    <script>
+        //Script para eliminar pedido
+        const beliminarpedido = document.querySelector("#beliminarpedido")
+        beliminarpedido.addEventListener('click', () => {
+          //Validar campos
+          const idpedido = document.getElementById('idpedido').value
+          if (idpedido.trim() === '') return false;
+          fetch('/delete-pedido', {
+            method: 'DELETE',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({idpedido:idpedido})
+          }).then(res => res.json())
+            .then(data => {
+              alert(data.result)
+            })
+        })
+      </script>
 
     <h1>Registrar Camion</h1>
-    <form action="/camion" , method="POST">
-        <input type="text" name="placas" placeholder="Ingresa las placas del camion" /><br />
-        <input type="text" name="marca" placeholder="Ingresa la marca del camion" /><br />
-        <input type="text" name="color" placeholder="Ingresa el color del camion" /><br />
-        <input type="submit" />
+    <form>
+        <input type="text" name="placas" id="placas" placeholder="Ingresa las placas del camion" /><br />
+        <input type="text" name="marca" id="marca" placeholder="Ingresa la marca del camion" /><br />
+        <input type="text" name="color" id="color" placeholder="Ingresa el color del camion" /><br />
+        <input type="button" id="bregistrarcamion" name="bregistrarcamion" value="Registrar camion">
     </form>
+    <script>
+        //Script para registrar el camion
+        let bregistrarcamion = document.querySelector("#bregistrarcamion")
+        bregistrarcamion.addEventListener('click', () => {
+          //Validar campos
+          const placas = document.getElementById('placas').value
+          const marca = document.getElementById('marca').value
+          const color = document.getElementById('color').value
+          if (color.trim() === '' || marca.trim() === '' || placas.trim()==='') return false;
+          fetch('/post-camion', {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({ marca: marca, color:color, placas:placas })
+          }).then(res => res.json())
+            .then(data => {
+              alert(data.result)
+            })
+        })
+      </script>
+
 
     <h1>Eliminar Camion</h1>
-    <form action="/eliminarcamion">
-        <input type="text" name="idEliminar" placeholder="Ingresa el ID" /><br />
-        <input type="submit" />
+    <form>
+        <input type="text" name="idcamion" id="idcamion" placeholder="Ingresa el ID" /><br />
+        <input type="button" id="beliminarcamion" name="beliminarcamion" value="Eliminar camion">
     </form>
 </body>
+
+
+<script>
+    //Script para eliminar camion
+    const beliminarcamion = document.querySelector("#beliminarcamion")
+    beliminarcamion.addEventListener('click', () => {
+      //Validar campos
+      const idcamion = document.getElementById('idcamion').value
+      if (idcamion.trim() === '') return false;
+      fetch('/delete-camion', {
+        method: 'DELETE',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({idcamion:idcamion})
+      }).then(res => res.json())
+        .then(data => {
+          alert(data.result)
+        })
+    })
+  </script>
 
 </html>

@@ -14,8 +14,8 @@ conexion.connect((err)=>{
     }
 });
 
-exports.registrarPedido=(preciokg)=>{
-    conexion.query("INSERT INTO `Logsys`.`Pedido` (`preciokg`) VALUES ("+preciokg+");", function (error, results, fields) {
+exports.registrarPedido=(preciokg, npedido)=>{
+    conexion.query("INSERT INTO `Logsys`.`Pedido` (`preciokg`, `nPedido`) VALUES ('"+preciokg+"', '"+npedido+"');", function (error, results, fields) {
         if (!error) {
             console.log("Se registro el pedido correctamente");
         }else{
