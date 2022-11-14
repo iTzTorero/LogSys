@@ -10,7 +10,9 @@ function spawnServer(){
 
     //configurar vistas
     app.set('views', __dirname + '/vista')
-    app.set('view engine', 'ejs')
+    app.set('view engine', 'html');
+    
+    //app.set('view engine', 'ejs')
 
     //Middleware errores
     app.use((err, req, res, next) => {

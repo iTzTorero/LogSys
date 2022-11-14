@@ -17,6 +17,7 @@ const Camion = sequelize.define("Camion",{
 
 module.exports = Camion
 
+
 /*const mysql = require('mysql')
 
 var conexion = mysql.createConnection({

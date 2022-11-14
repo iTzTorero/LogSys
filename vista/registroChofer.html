@@ -8,13 +8,13 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Registrar camión</title>
+    <title>Registrar chofer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="LogSys/vista/assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -51,9 +51,9 @@ https://templatemo.com/tm-580-woox-travel
                 <nav class="main-nav">
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="registroCamion.html" class="active">Registrar Camión</a></li>
+                        <li><a href="registroCamion.html">Registrar Camión</a></li>
                         <li><a href="registroPedido.html">Registrar Pedido</a></li>
-                        <li><a href="registroChofer.html">Registrar Chofer</a></li> 
+                        <li><a href="registroChofer.html" class="active">Registrar Chofer</a></li> 
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -72,31 +72,17 @@ https://templatemo.com/tm-580-woox-travel
           <form id="reservation-form" name="gs" method="submit" role="search" action="#">
             <div class="row">
               <div class="col-lg-12">
-                <h4>Registrar Camión</h4>
+                <h4>Registrar Chofer</h4>
               </div>
               <div class="col-lg-6">
                   <fieldset>
-                      <label for="Placas" class="form-label">Placas</label>
-                      <input type="text" name="Placas" class="Placas" placeholder="Placas" autocomplete="on" required>
+                      <label for="Name" class="form-label">Nombre</label>
+                      <input type="text" name="nombrechofer" id="nombrechofer" class="Name" placeholder="Nombre" autocomplete="on" required>
                   </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                    <label for="Marca" class="form-label">Marca del camión</label>
-                    <input type="text" name="Marca" class="Marca" placeholder="Marca" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                    <label for="Color" class="form-label">Color del camión</label>
-                    <input type="text" name="Color" class="Color" placeholder="Color" autocomplete="on" required>
-                </fieldset>
-              </div>
-      
-             
+              </div>            
               <div class="col-lg-12">                        
                   <fieldset>
-                      <button class="main-button">Registrar</button>
+                      <button id="bregistrarchofer" class="main-button">Registrar chofer</button>
                   </fieldset>
               </div>
             </div>
@@ -105,6 +91,9 @@ https://templatemo.com/tm-580-woox-travel
       </div>
     </div>
   </div>
+
+
+  
 
   <footer>
     <div class="container">
@@ -134,6 +123,24 @@ https://templatemo.com/tm-580-woox-travel
       $(".option").removeClass("active");
       $(this).addClass("active"); 
     });
+  </script>
+
+  <!-- Script para registrar chofer -->
+  <script>
+    const bregistrarchofer = document.querySelector("#bregistrarchofer")
+    bregistrarchofer.addEventListener('click', () => {
+      //Validar campos
+      const nombrechofer = document.getElementById('nombrechofer').value
+      if (nombrechofer.trim() === '') return false;
+      fetch('/chofer', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({nombre:nombrechofer})
+      }).then(res => res.json())
+        .then(data => {
+          alert(data.result)
+        })
+    })
   </script>
 
   </body>

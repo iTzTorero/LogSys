@@ -32,11 +32,12 @@ class CamionController {
         await camionRepository.add(camion);
 
         const json =  camion.toJSON();
+       // json.append({result: "Camion registrado correctamente"})
         res.json(json);
     }
 
     async update(req, res) {
-        const { id } = req.params;
+        const { id } = req.query.id;
 
         const camion = await camionRepository.findOneById(id);
         if(!camion){
@@ -54,7 +55,7 @@ class CamionController {
     }
 
     async delete(req, res) {
-        const { id } = req.params;
+        const { id } = req.query.id;
 
         const camion = await camionRepository.findOneById(id);
         if(!camion){

@@ -1,14 +1,41 @@
 const CamionController = require('../controladores/CamionController.js');
+const PedidoController = require('../controladores/PedidoController.js');
+const ChoferController = require('../controladores/ChoferController.js');
+
+
 
 const registerRoutes = (app) => {
     const camiones = new CamionController();
+    const pedidos = new PedidoController();
+    const choferes = new ChoferController();
+ 
 
+    //endpoint default
+    app.get('/', async (req, res) => {
+        // res.send("Hola, desde la ruta GET/");
+
+        //console.log(listaEstudiantes);
+        res.sendFile('C:/Users/Arcke/Documents/NetBeansProjects/LogSys/vista/registroChofer.html');
+    });
     
     app.get('/camion/:id', camiones.find);
     app.get('/camion', camiones.find);
     app.post('/camion', camiones.add);
     app.put('/camion/:id', camiones.update);
     app.delete('/camion/:id', camiones.delete);
+
+    app.get('/chofer/:id', choferes.find);
+    app.get('/chofer', choferes.find);
+    app.post('/chofer', choferes.add);
+    app.put('/chofer/:id', choferes.update);
+    app.delete('/chofer/:id', choferes.delete);
+
+    app.get('/pedido/:id', pedidos.find);
+    app.get('/pedido', pedidos.find);
+    app.post('/pedido', pedidos.add);
+    app.put('/pedido/:id', pedidos.update);
+    app.delete('/pedido/:id', pedidos.delete);
+    
 }
 
 module.exports = { registerRoutes};
