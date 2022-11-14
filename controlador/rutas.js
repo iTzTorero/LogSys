@@ -15,7 +15,7 @@ const registerRoutes = (app) => {
         // res.send("Hola, desde la ruta GET/");
 
         //console.log(listaEstudiantes);
-        res.sendFile('C:/Users/Arcke/Documents/NetBeansProjects/LogSys/vista/registroChofer.html');
+        res.sendFile('../vista/registroChofer.html');
     });
     
     app.get('/camion/:id', camiones.find);
