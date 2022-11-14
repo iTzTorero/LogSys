@@ -1,3 +1,22 @@
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("./conexion");
+
+const Chofer = sequelize.define("Chofer",{
+    idChofer:{
+        type: DataTypes.INTEGER,
+        primaryKey : true
+    },
+    nombre : { type: DataTypes.STRING}
+ 
+},{
+    tableName: 'Chofer',
+    createdAt: false,
+    updatedAt: false
+});
+
+module.exports = Chofer
+
+/*
 const mysql = require('mysql2')
 var conexion = mysql.createConnection({
     host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
@@ -36,5 +55,5 @@ exports.eliminarChofer=(id)=>{
 exports.consultarChoferes=()=>{
 
 }
-
+*/
 

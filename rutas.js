@@ -1,10 +1,10 @@
-const CamionController = require('../controladores/CamionController.js');
+const CamionController = require('./controladores/CamionController.js');
 
 const registerRoutes = (app) => {
     const camiones = new CamionController();
 
     
-    app.get('/camion/:id', camiones.find);
+    pp.get('/camion/:id', camiones.find);
     app.get('/camion', camiones.find);
     app.post('/camion', camiones.add);
     app.put('/camion/:id', camiones.update);

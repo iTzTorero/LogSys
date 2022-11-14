@@ -6,24 +6,24 @@ class CamionRepository{
         return camiones;
     }
 
-    async findOneById(id){
+    async findOneById(idCamion){
         const camion = await modelo.findOne({
-            where: {id}
+            where: {idCamion}
         });
 
         return camion;
     }
 
     async add(camion){
-        camion.id = 0;
+        camion.idCamion = 0;
         return( await camion.save());
     }
 
     async update(camion){
-        if(camion.id <= 0)
+        if(camion.idCamion <= 0)
             throw new Error('Expecting user to have a valid id');
 
-        return (await camion.destroy());
+        return (await camion.save());
         
     }
 
