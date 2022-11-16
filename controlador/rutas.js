@@ -1,3 +1,5 @@
+
+var path = require('path');
 const CamionController = require('../controladores/CamionController.js');
 const PedidoController = require('../controladores/PedidoController.js');
 const ChoferController = require('../controladores/ChoferController.js');
@@ -14,9 +16,11 @@ const registerRoutes = (app) => {
     app.get('/', async (req, res) => {
         // res.send("Hola, desde la ruta GET/");
 
-        //console.log(listaEstudiantes);
-        res.sendFile('../vista/registroChofer.html');
+            res.sendFile(path.resolve('vista/registroChofer.html'));
+           
+           
     });
+    
     
     app.get('/camion/:id', camiones.find);
     app.get('/camion', camiones.find);
