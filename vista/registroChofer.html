@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Registrar chofer</title>
+    <title>Chófer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +51,9 @@ https://templatemo.com/tm-580-woox-travel
                 <nav class="main-nav">
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="registroCamion.html">Registrar Camión</a></li>
-                        <li><a href="registroPedido.html">Registrar Pedido</a></li>
-                        <li><a href="registroChofer.html" class="active">Registrar Chofer</a></li> 
+                        <li><a href="registroCamion.html">Camión</a></li>
+                        <li><a href="registroPedido.html">Pedido</a></li>
+                        <li><a href="registroChofer.html" class="active">Chófer</a></li> 
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -72,17 +72,30 @@ https://templatemo.com/tm-580-woox-travel
           <form id="reservation-form" name="gs" method="submit" role="search" action="#">
             <div class="row">
               <div class="col-lg-12">
-                <h4>Registrar Chofer</h4>
+                <h4>Registrar Chófer</h4>
               </div>
               <div class="col-lg-6">
-                  <fieldset>
-                      <label for="Name" class="form-label">Nombre</label>
-                      <input type="text" name="nombrechofer" id="nombrechofer" class="Name" placeholder="Nombre" autocomplete="on" required>
+                <fieldset>
+                    <label for="Name" class="form-label">Nombre(s)</label>
+                    <input type="text" name="nombrechofer" pattern="[a-zA-Z ]{2,254}" id="nombrechofer" class="Name" placeholder="Nombre" autocomplete="on" required>
                   </fieldset>
-              </div>            
+              </div>  
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="last_name" class="form-label">Apellido Paterno</label>
+                      <input type="text" name="apellidopaternochofer" pattern="[a-zA-Z ]{2,254}" id="apellido_paterno_chofer" class="Name" placeholder="Apellido paterno" pattern="[a-zA-Z ]{2,254}" autocomplete="on" required>
+                </fieldset>
+              </div>      
+              <div class="col-lg-6">
+                <fieldset>    
+                      <label for="last_name" class="form-label">Apellido Materno</label>
+                      <input type="text" name="apellidomaternochofer" pattern="[a-zA-Z ]{2,254}" id="apellido_materno_chofer" class="Name" placeholder="Apellido materno" pattern="[a-zA-Z ]{2,254}" autocomplete="on">
+                  </fieldset>
+              </div>     
+                
               <div class="col-lg-12">                        
                   <fieldset>
-                      <button id="bregistrarchofer" class="main-button">Registrar chofer</button>
+                      <button id="bregistrarchofer" class="main-button">Registrar</button>
                   </fieldset>
               </div>
             </div>
@@ -92,14 +105,51 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
+  <div id="TableSorterCard" class="card">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive border_table">
+          <table id="ipi-table" class="table table-striped table tablesorter">
+            <thead class="thead-dark">
+              <tr class="table_top_color">
+                <th style="font-size: 14px;" class="text-center">Nombre</th>
+                <th style="font-size: 14px;" class="text-center filter-false sorter-false">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <!-- aquí va el for para las consultas de la tabla -->
+              <tr>
+                <td style="font-size: 13px;" >Aquí va el nombre completo</td>
+                <td class="text-center align-middle" style="max-height: 60px;height: 60px;">
+                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href="" title="Ver detalles">
+                      <i class="far fa-eye"></i>
+                  </a>
+                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href="" title="Editar">
+                    <i class="fas fa-pen"></i>
+                </a>
+                  <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
+                    role="button" data-bs-toggle="modal" data-bss-tooltip=""
+                    style="margin-left: 3px;" data-bs-target="#delete-modal"
+                    title="Eliminar" onclick="">
+                    <i class="fas fa-trash btnNoBorders"
+                      style="color: #DC3545;"></i>
+                  </button>
+                </td>
+              </tr>
 
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2022<a href="#"> GuasaveSoft</a> Company. All rights reserved. 
+          <p>Copyright © 2022<a href="#"> Cyberpunks</a> Company. All rights reserved. 
         </div>
       </div>
     </div>

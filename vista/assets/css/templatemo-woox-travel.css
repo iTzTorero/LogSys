@@ -354,6 +354,7 @@ Header Style
   background: transparent;
   display: flex;
   padding: 0px 30px;
+  position: center;
 }
 
 .background-header .main-nav {
@@ -1664,7 +1665,7 @@ body #user-button:hover .u-icons, body #user-button:focus-within .u-icons {
 
 @media (prefers-color-scheme: dark) {
   body:not(.light) {
-    background: #232223;
+    background: #cbdbc9;
     color: white;
   }
 }
