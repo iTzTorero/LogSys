@@ -180,26 +180,7 @@ https://templatemo.com/tm-580-woox-travel
   </script>
 
   <!--Script para registrar camion-->
-  <script>
-    //Script para registrar el camion
-    let bregistrarcamion = document.querySelector("#bregistrarcamion")
-    bregistrarcamion.addEventListener('click', () => {
-      //Validar campos
-      const placas = document.getElementById('placas').value
-      const marca = document.getElementById('marca').value
-      const color = document.getElementById('color').value
-      console.log( color+marca+placas);
-      if (color.trim() === '' || marca.trim() === '' || placas.trim()==='') return false;
-      fetch('http://127.0.0.1:8080/camion', {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({ marca: marca, color:color, placas:placas })
-      }).then(res => res.json())
-        .then(data => {
-          alert(data.body)
-        })
-    })
-  </script>
+  <script src ="scripts/registroCamion.js"></script>
 
   </body>
 

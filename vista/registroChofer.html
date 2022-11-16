@@ -176,22 +176,7 @@ https://templatemo.com/tm-580-woox-travel
   </script>
 
   <!-- Script para registrar chofer -->
-  <script>
-    const bregistrarchofer = document.querySelector("#bregistrarchofer")
-    bregistrarchofer.addEventListener('click', () => {
-      //Validar campos
-      const nombrechofer = document.getElementById('nombrechofer').value
-      if (nombrechofer.trim() === '') return false;
-      fetch('/chofer', {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({nombre:nombrechofer})
-      }).then(res => res.json())
-        .then(data => {
-          alert(data.result)
-        })
-    })
-  </script>
+  <script src="scripts/registroChofer.js"></script>
 
   </body>
 
