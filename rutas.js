@@ -4,11 +4,23 @@ const registerRoutes = (app) => {
     const camiones = new CamionController();
 
     
-    pp.get('/camion/:id', camiones.find);
+    app.get('/camion/:id', camiones.find);
     app.get('/camion', camiones.find);
     app.post('/camion', camiones.add);
     app.put('/camion/:id', camiones.update);
     app.delete('/camion/:id', camiones.delete);
+
+    app.get('/chofer/:id', choferes.find);
+    app.get('/chofer', choferes.find);
+    app.post('/chofer', choferes.add);
+    app.put('/chofer/:id', choferes.update);
+    app.delete('/chofer/:id', choferes.delete);
+
+    app.get('/pedido/:id', pedidos.find);
+    app.get('/pedido', pedidos.find);
+    app.post('/pedido', pedidos.add);
+    app.put('/pedido/:id', pedidos.update);
+    app.delete('/pedido/:id', pedidos.delete);
 }
 
 module.exports = { registerRoutes};
