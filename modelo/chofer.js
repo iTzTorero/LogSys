@@ -1,40 +1,17 @@
-const mysql = require('mysql')
-var conexion = mysql.createConnection({
-    host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
-    user: 'admin',
-    password: 'R575859t595857',
-    database: 'Logsys'
-})
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("./conexion");
 
-conexion.connect((err)=>{
-    if (err!=null) {
-        console.log("Error al conectar a la base de datos "+err);
-    }else{
-        console.log("Conectado a base de datos");
-  
-    }
+const Chofer = sequelize.define("Chofer",{
+    idChofer:{
+        type: DataTypes.INTEGER,
+        primaryKey : true
+    },
+    nombre : { type: DataTypes.STRING}
+ 
+},{
+    tableName: 'Chofer',
+    createdAt: false,
+    updatedAt: false
 });
 
-exports.registrarChofer=(nombre)=>{
-    conexion.query("INSERT INTO `Logsys`.`Chofer` (`nombre`) VALUES ('"+nombre+"');", function (error, results, fields) {
-        if (!error) {
-            console.log("Se registro el chofer correctamente");
-        }
-    });
-}
-
-exports.eliminarChofer=(id)=>{
-    conexion.query("DELETE FROM `Logsys`.`Chofer` WHERE (`idChofer` = "+id+");", function (error, results, fields) {
-        if (!error) {
-            console.log("Se elimino el chofer correctamente");
-        }else{
-            console.log(error);
-        }
-    });
-}
-
-exports.consultarChoferes=()=>{
-    
-}
-
-
+module.exports = Chofer

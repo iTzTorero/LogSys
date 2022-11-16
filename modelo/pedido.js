@@ -1,35 +1,19 @@
-const mysql = require('mysql')
-var conexion = mysql.createConnection({
-    host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
-    user: 'admin',
-    password: 'R575859t595857',
-    database: 'Logsys'
-})
+const { DataTypes, STRING } = require("sequelize");
+const { sequelize } = require("./conexion");
 
-conexion.connect((err)=>{
-    if (err!=null) {
-        console.log("Error al conectar a la base de datos "+err);
-    }else{
-  
-    }
+const Pedido = sequelize.define("Pedido",{
+    idPedido:{
+        type: DataTypes.INTEGER,
+        primaryKey : true
+    },
+    preciokg : { type: DataTypes.DOUBLE},
+    nPedido : { type: DataTypes.STRING }
+ 
+},{
+    tableName: 'Pedido',
+    createdAt: false,
+    updatedAt: false
 });
 
-exports.registrarPedido=(preciokg, npedido)=>{
-    conexion.query("INSERT INTO `Logsys`.`Pedido` (`preciokg`, `nPedido`) VALUES ('"+preciokg+"', '"+npedido+"');", function (error, results, fields) {
-        if (!error) {
-            console.log("Se registro el pedido correctamente");
-        }else{
-            console.log(error);
-        }
-    });
-}
+module.exports = Pedido
 
-exports.eliminarPedido=(id)=>{
-    conexion.query("DELETE FROM `Logsys`.`Pedido` WHERE (`idPedido` = "+id+");", function (error, results, fields) {
-        if (!error) {
-            console.log("Se elimino el pedido correctamente");
-        }else{
-            console.log(error);
-        }
-    });
-}

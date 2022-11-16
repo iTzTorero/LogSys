@@ -1,7 +1,46 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const {registerRoutes} = require('./controlador/rutas.js')
+const cors = require('cors');
+
+function spawnServer(){
+    const app = express();
+    const port = 8080;
+
+    //Configuracion cors
+    //app.use(cors());
+    
+    app.use(express.static(__dirname + '/vista'));
+    app.use(bodyParser.json());
+
+    //configurar vistas
+    app.set('views', __dirname + '/vista')
+    app.set('view engine', 'html');
+    
+    //app.set('view engine', 'ejs')
+
+    //Middleware errores
+    app.use((err, req, res, next) => {
+        res.json({message: 'Internal server error.'}, 500);
+    })
+
+    registerRoutes(app);
+
+    app.listen(port, () => {
+        console.log(`RESTful server running at http://127.0.0.1:${port}`);
+    });
+}
+
+
+spawnServer();
+
+
+/*
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const mysql = require('mysql')
+const mysql = require('mysql2')
+const port = 3000;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -9,10 +48,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.set('views', __dirname + '/vista')
 app.set('view engine', 'ejs')
 //configurar rutas
+
+
+
 const indiceRutas = require('./controlador/rutas')
 app.use('/', indiceRutas)
 
-app.listen(3000, () => {
-    console.log('express Corriendo en el puerto 3000');
+app.listen(port, () => {
+    console.log(`RESTful server running at http://127.0.0.1:${port}`);
 
 })
+*/

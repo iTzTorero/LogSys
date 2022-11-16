@@ -1,4 +1,25 @@
-const mysql = require('mysql')
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("./conexion");
+
+const Camion = sequelize.define("Camion",{
+    idCamion:{
+        type: DataTypes.INTEGER,
+        primaryKey : true
+    },
+    placas : { type: DataTypes.STRING},
+    marca : { type: DataTypes.STRING},
+    color: { type: DataTypes.STRING}
+},{
+    tableName: 'Camion',
+    createdAt: false,
+    updatedAt: false
+});
+
+module.exports = Camion
+
+
+/*const mysql = require('mysql')
+
 var conexion = mysql.createConnection({
     host: 'logsys-database.cjhkwxzvzene.us-west-2.rds.amazonaws.com',
     user: 'admin',
@@ -33,3 +54,4 @@ exports.eliminarCamion=(id)=>{
         }
     });
 }
+*/
