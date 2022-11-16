@@ -1,11 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const {registerRoutes} = require('./controlador/rutas.js')
+const cors = require('cors');
 
 function spawnServer(){
     const app = express();
     const port = 8080;
 
+    //Configuracion cors
+    //app.use(cors());
+    
+    app.use(express.static(__dirname + '/vista'));
     app.use(bodyParser.json());
 
     //configurar vistas
