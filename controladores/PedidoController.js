@@ -25,7 +25,7 @@ class PedidoController {
     async add(req, res) {
         const pedido = new pedidoModelo();
         pedido.idPedido = 0;
-        pedido.precioKg = req.body.precioKg;
+        pedido.preciokg = req.body.preciokg;
         pedido.nPedido = req.body.nPedido;
 
         await pedidoRepository.add(pedido);
@@ -42,7 +42,7 @@ class PedidoController {
             res.json({message: 'Not found'}, 404);
             return;
         }
-        pedido.precioKg = req.body.precioKg;
+        pedido.preciokg = req.body.preciokg;
         pedido.nPedido = req.body.nPedido;
 
         await pedidoRepository.update(pedido);
