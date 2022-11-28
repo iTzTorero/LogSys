@@ -26,7 +26,7 @@ const registerRoutes = (app) => {
     app.get('/camion', camiones.find);
     app.post('/camion', camiones.add);
     app.put('/camion/:id', camiones.update);
-    app.delete('/camion/:id', camiones.delete);
+    app.delete('/camion', camiones.delete);
 
     app.get('/chofer/:id', choferes.find);
     app.get('/chofer', choferes.find);

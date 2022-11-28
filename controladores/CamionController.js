@@ -55,8 +55,7 @@ class CamionController {
     }
 
     async delete(req, res) {
-        const { id } = req.query.id;
-
+        const id = req.body.id;
         const camion = await camionRepository.findOneById(id);
         if(!camion){
             res.json({message : 'Not found'}, 404);
