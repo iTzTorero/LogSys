@@ -38,7 +38,7 @@ const registerRoutes = (app) => {
     app.get('/pedido', pedidos.find);
     app.post('/pedido', pedidos.add);
     app.put('/pedido/:id', pedidos.update);
-    app.delete('/pedido/:id', pedidos.delete);
+    app.delete('/pedido', pedidos.delete);
     
 }
 

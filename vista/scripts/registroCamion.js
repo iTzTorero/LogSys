@@ -55,8 +55,6 @@ fetch("/camion", {
         alert('Se elimino el camion con ID: ' + idCamion)
         location.reload();
       })
-
-
     });
   });
 

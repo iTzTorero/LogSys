@@ -52,7 +52,7 @@ class PedidoController {
     }
 
     async delete(req, res) {
-        const { id } = req.query.id;
+        const  id  = req.body.id;
 
         const pedido = await pedidoRepository.findOneById(id);
         if(!pedido){
