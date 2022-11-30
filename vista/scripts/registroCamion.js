@@ -48,6 +48,7 @@ fetch("/camion", {
       //cellBotones.innerHTML = tdBotones.innerHTML;
       let botonEliminar = document.createElement("button")
       //tdBotones.querySelector("button")
+      
       botonEliminar.textContent = 'Eliminar'
       cellBotones.appendChild(botonEliminar)
 
@@ -88,11 +89,7 @@ fetch("/camion", {
       })
     });
 
-
   });
-
-
-
 
 bregistrarcamion.addEventListener('click', () => {
 
@@ -115,7 +112,6 @@ bregistrarcamion.addEventListener('click', () => {
   }).then(res => res.json())
     .then(data => console.log(data.body))
 })
-
 
 btnActualizarCamion.addEventListener( "click", function(){
   fetch( '/camion?id='+idCamionModal.value, {
