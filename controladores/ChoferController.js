@@ -5,7 +5,7 @@ const choferRepository = new ChoferRepository();
 
 class ChoferController {
     async find(req, res){
-        const id = req.query.id;
+        const id = req.body.id;
         
         console.log(id);
         if(id > 0){

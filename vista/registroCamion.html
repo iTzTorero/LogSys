@@ -53,7 +53,7 @@ https://templatemo.com/tm-580-woox-travel
                     <ul class="nav">
                         <li><a href="registroCamion.html" class="active">Camión</a></li>
                         <li><a href="registroPedido.html">Pedido</a></li>
-                        <li><a href="registroChofer.html">Chófer</a></li> 
+                        <li><a href="registroChofer.html">Chofer</a></li> 
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -127,19 +127,7 @@ https://templatemo.com/tm-580-woox-travel
                 <td style="font-size: 13px;" >Aquí va la marca</td>
                 <td style="font-size: 13px;" >Aquí va el color</td>
                 <td id = "tdBotones" class="text-center align-middle" style="max-height: 60px;height: 60px;">
-                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href="" title="Ver detalles">
-                      <i class="far fa-eye"></i>
-                  </a>
-                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href="" title="Editar">
-                    <i class="fas fa-pen"></i>
-                </a>
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
-                  role="button" data-bs-toggle="modal" data-bss-tooltip=""
-                  style="margin-left: 3px;" data-bs-target="#delete-modal"
-                  title="Eliminar" onclick="">
-                  <i class="fas fa-trash btnNoBorders"
-                    style="color: #DC3545;"></i>
-                </button>
+                
                 </td>
               </tr>
 
@@ -159,6 +147,55 @@ https://templatemo.com/tm-580-woox-travel
       </div>
     </div>
   </footer>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="modalEditar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Editar camión</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align:left; color:black;">
+        <div class="col-lg-6">
+          <fieldset>
+              <label for="IdCamion" class="form-label">ID camión</label></br>
+              <input type="text" name="IdCamion" id="idCamionModal" class="IdCamion"  autocomplete="on" required>
+          </fieldset>
+      </div>
+        <div class="col-lg-6">
+          <fieldset>
+              <label for="Placas" class="form-label">Placas</label></br>
+              <input type="text" name="placas" id="placasModal" class="Placas"  autocomplete="on" required>
+          </fieldset>
+      </div>
+      <div class="col-lg-6">
+        <fieldset>
+            <label for="Marca" class="form-label">Marca del camión</label>
+            <input type="text" name="marca" id="marcaModal" class="Marca"  autocomplete="on" required>
+        </fieldset>
+      </div>
+      <div class="col-lg-6">
+        <fieldset>
+            <label for="Color" class="form-label">Color del camión</label>
+            <input type="text" name="color" id="colorModal" class="Color" autocomplete="on" required>
+        </fieldset>
+      </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="btnActualizar" type="button" class="btn btn-success" data-bs-dismiss="modal">Actualizar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- Scripts -->
