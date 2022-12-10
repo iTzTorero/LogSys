@@ -156,6 +156,78 @@ https://templatemo.com/tm-580-woox-travel
   </footer>
 
 
+  
+<!-- The Modal -->
+<div class="modal" id="modalEditar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Editar pedido</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align:left; color:black;">
+        <div class="col-lg-6">
+          <fieldset>
+              <label for="idPedido" class="form-label">ID Pedido</label></br>
+              <input type="text" name="idpedido" id="idPedidoModal" class="idPedido"  autocomplete="on" required>
+          </fieldset>
+      </div>
+        <div class="col-lg-6">
+          <fieldset>
+              <label for="nPedido" class="form-label">Número de pedido</label></br>
+              <input type="text" name="placas" id="npedidoModal" class="nPedido"  autocomplete="on" required>
+          </fieldset>
+      </div>
+      <div class="col-lg-6">
+        <fieldset>
+            <label for="Marca" class="form-label">Precio(Kg)</label>
+            <input type="text" name="marca" id="preciokgModal" class="Marca"  autocomplete="on" required>
+        </fieldset>
+      </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="btnActualizar" type="button" class="btn btn-success" data-bs-dismiss="modal">Actualizar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="modalEliminar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminado</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align:left; color:black;">
+
+        <div class="col-lg-6">
+          <fieldset>
+
+            <h4>El pedido se ha eliminado correctamente</h4>
+
+          </fieldset>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

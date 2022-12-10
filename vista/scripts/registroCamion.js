@@ -24,7 +24,7 @@ fetch("/camion", {
 }).then((res) => res.json())
   .then((data) => {
     tbody.innerHTML = '';
-  
+
     data.forEach(element => {
       let newRow = tbody.insertRow();
 
@@ -48,7 +48,7 @@ fetch("/camion", {
       //cellBotones.innerHTML = tdBotones.innerHTML;
       let botonEliminar = document.createElement("button")
       //tdBotones.querySelector("button")
-      
+
       botonEliminar.textContent = 'Eliminar'
       cellBotones.appendChild(botonEliminar)
 
@@ -66,30 +66,33 @@ fetch("/camion", {
           method: 'DELETE',
           headers: { 'Content-type': 'application/json' },
           body: JSON.stringify({
-          id: idCamion
-    })
+            id: idCamion
+          })
         }).then(res => res.json())
-          .then(data => console.log(data.body))
-        alert('Se elimino el camion con ID: ' + idCamion)
-        location.reload();
-      })
+          .then(data => {
+            console.log(data.body)
+            $('#modalEliminar').modal('show');
+            location.reload()
+          })
 
-          //Evento para eliminar un elemento de la base de datos.
+
+        //Evento para eliminar un elemento de la base de datos.
+
+      });
       botonEditar.addEventListener("click", () => {
         // console.log(botonEliminar.parentNode.parentNode.firstChild.textContent);
         //et idCamion = botonEditar.parentNode.parentNode.firstChild.textContent
         $('#modalEditar').modal('show');
-        idCamionModal.value=element.idCamion;
-        placasModal.value=element.placas;
-        marcaModal.value=element.marca;
-        colorModal.value=element.color;
-        
-       
+        idCamionModal.value = element.idCamion;
+        placasModal.value = element.placas;
+        marcaModal.value = element.marca;
+        colorModal.value = element.color;
+
+
         //location.reload();
       })
     });
-
-  });
+  })
 
 bregistrarcamion.addEventListener('click', () => {
 
@@ -110,11 +113,14 @@ bregistrarcamion.addEventListener('click', () => {
       placas: placas.value
     })
   }).then(res => res.json())
-    .then(data => console.log(data.body))
+    .then(data => {
+      console.log(data.body)
+      location.reload()
+    })
 })
 
-btnActualizarCamion.addEventListener( "click", function(){
-  fetch( '/camion?id='+idCamionModal.value, {
+btnActualizarCamion.addEventListener("click", function () {
+  fetch('/camion?id=' + idCamionModal.value, {
     method: 'PUT',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
@@ -124,9 +130,8 @@ btnActualizarCamion.addEventListener( "click", function(){
       color: colorModal.value
     })
 
-  }).then( res => { 
+  }).then(res => {
     location.reload();
     res.json();
-  }).catch( err => console.log(err) )
-    
+  }).catch(err => console.log(err))
 });

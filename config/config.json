@@ -19,5 +19,12 @@
         "database": "database_production",
         "host": "127.0.0.1",
         "dialect": "mysql"
+    },
+    "local": {
+        "username": "root",
+        "password": "password",
+        "database": "Logsys",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
     }
   }

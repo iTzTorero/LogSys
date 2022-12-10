@@ -37,13 +37,18 @@ class CamionController {
     }
 
     async update(req, res) {
-        const { id } = req.body.id;
+        const  id  = req.body.id;
+        if(!id){
+            res.json({message: 'Not id found'}, 404);
+            return;
+        }
 
         const camion = await camionRepository.findOneById(id);
         if(!camion){
             res.json({message: 'Not found'}, 404);
             return;
         }
+
         console.log(camion);
         camion.placas = req.body.placas;
         camion.marca = req.body.marca;
@@ -57,6 +62,11 @@ class CamionController {
 
     async delete(req, res) {
         const id = req.body.id;
+        if(!id){
+            res.json({message: 'Not id found'}, 404);
+            return;
+        }
+
         const camion = await camionRepository.findOneById(id);
         if(!camion){
             res.json({message : 'Not found'}, 404);

@@ -11,7 +11,7 @@ class ChoferController {
         if(id > 0){
             const chofer = await choferRepository.findOneById(id);
             if(!chofer){
-                res.json({message: 'Not found'}, 404);
+                res.json({message: 'Not found1'}, 404);
                 return;
             }
 
@@ -33,11 +33,11 @@ class ChoferController {
     }
 
     async update(req, res) {
-        const { id } = req.query.id;
+        const  id  = req.body.id;
 
         const chofer = await choferRepository.findOneById(id);
         if(!chofer){
-            res.json({message: 'Not found'}, 404);
+            res.json({message: 'Not found2'}, 404);
             return;
         }
         chofer.nombre = req.body.nombre;
@@ -49,11 +49,12 @@ class ChoferController {
     }
 
     async delete(req, res) {
-        const { id } = req.query.id;
-
+        console.log('Imprimiendo el body: '+ req.body);
+        const  id  = req.body.id;
+        console.log(id);
         const chofer = await choferRepository.findOneById(id);
         if(!chofer){
-            res.json({message : 'Not found'}, 404);
+            res.json({message : 'No encontre ningun chofer'}, 404);
             return;
         }
 

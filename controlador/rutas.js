@@ -3,14 +3,14 @@ var path = require('path');
 const CamionController = require('../controladores/CamionController.js');
 const PedidoController = require('../controladores/PedidoController.js');
 const ChoferController = require('../controladores/ChoferController.js');
-
+const PrestamoController = require('../controladores/PrestamoController.js');
 
 
 const registerRoutes = (app) => {
     const camiones = new CamionController();
     const pedidos = new PedidoController();
     const choferes = new ChoferController();
- 
+    const prestamos = new PrestamoController();
 
     //endpoint default
     app.get('/', async (req, res) => {
@@ -25,20 +25,27 @@ const registerRoutes = (app) => {
     app.get('/camion/:id', camiones.find);
     app.get('/camion', camiones.find);
     app.post('/camion', camiones.add);
-    app.put('/camion/:id', camiones.update);
+    app.put('/camion', camiones.update);
     app.delete('/camion', camiones.delete);
 
     app.get('/chofer/:id', choferes.find);
     app.get('/chofer', choferes.find);
     app.post('/chofer', choferes.add);
     app.put('/chofer/:id', choferes.update);
-    app.delete('/chofer/:id', choferes.delete);
+    app.delete('/chofer', choferes.delete);
 
     app.get('/pedido/:id', pedidos.find);
     app.get('/pedido', pedidos.find);
     app.post('/pedido', pedidos.add);
-    app.put('/pedido/:id', pedidos.update);
+    app.put('/pedido', pedidos.update);
     app.delete('/pedido', pedidos.delete);
+
+
+    app.get('/prestamo/:id', prestamos.find);
+    app.get('/prestamo', prestamos.find);
+    app.post('/prestamo', prestamos.add);
+    app.put('/prestamo/:id', prestamos.update);
+    app.delete('/prestamo', prestamos.delete);
     
 }
 

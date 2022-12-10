@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const env = 'development';
+const env = 'local';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {}
 

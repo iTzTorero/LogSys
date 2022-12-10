@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <title>Chofer</title>
+  <title>Chofer</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="LogSys/vista/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="LogSys/vista/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
 
 TemplateMo 580 Woox Travel
 
 https://templatemo.com/tm-580-woox-travel
 
 -->
-  </head>
+</head>
 
 <body>
 
@@ -46,22 +47,22 @@ https://templatemo.com/tm-580-woox-travel
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="registroCamion.html">Camión</a></li>
-                        <li><a href="registroPedido.html">Pedido</a></li>
-                        <li><a href="registroChofer.html" class="active">Chofer</a></li> 
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="registroCamion.html">Camión</a></li>
+              <li><a href="registroPedido.html">Pedido</a></li>
+              <li><a href="registroChofer.html" class="active">Chofer</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
+      </div>
     </div>
   </header>
 
@@ -76,27 +77,32 @@ https://templatemo.com/tm-580-woox-travel
               </div>
               <div class="col-lg-6">
                 <fieldset>
-                    <label for="Name" class="form-label">Nombre(s)</label>
-                    <input type="text" name="nombrechofer" pattern="[a-zA-Z ]{2,254}" id="nombrechofer" class="Name" placeholder="Nombre" autocomplete="on" required>
-                  </fieldset>
-              </div>  
+                  <label for="Name" class="form-label">Nombre(s)</label>
+                  <input type="text" name="nombrechofer" pattern="[a-zA-Z ]{2,254}" id="nombrechofer" class="Name"
+                    placeholder="Nombre" autocomplete="on" required>
+                </fieldset>
+              </div>
               <div class="col-lg-6">
                 <fieldset>
                   <label for="last_name" class="form-label">Apellido Paterno</label>
-                      <input type="text" name="apellidopaternochofer" pattern="[a-zA-Z ]{2,254}" id="apellido_paterno_chofer" class="Name" placeholder="Apellido paterno" pattern="[a-zA-Z ]{2,254}" autocomplete="on" required>
+                  <input type="text" name="apellidopaternochofer" pattern="[a-zA-Z ]{2,254}"
+                    id="apellido_paterno_chofer" class="Name" placeholder="Apellido paterno" pattern="[a-zA-Z ]{2,254}"
+                    autocomplete="on" required>
                 </fieldset>
-              </div>      
+              </div>
               <div class="col-lg-6">
-                <fieldset>    
-                      <label for="last_name" class="form-label">Apellido Materno</label>
-                      <input type="text" name="apellidomaternochofer" pattern="[a-zA-Z ]{2,254}" id="apellido_materno_chofer" class="Name" placeholder="Apellido materno" pattern="[a-zA-Z ]{2,254}" autocomplete="on">
-                  </fieldset>
-              </div>     
-                
-              <div class="col-lg-12">                        
-                  <fieldset>
-                      <button id="bregistrarchofer" class="main-button">Registrar</button>
-                  </fieldset>
+                <fieldset>
+                  <label for="last_name" class="form-label">Apellido Materno</label>
+                  <input type="text" name="apellidomaternochofer" pattern="[a-zA-Z ]{2,254}"
+                    id="apellido_materno_chofer" class="Name" placeholder="Apellido materno" pattern="[a-zA-Z ]{2,254}"
+                    autocomplete="on">
+                </fieldset>
+              </div>
+
+              <div class="col-lg-12">
+                <fieldset>
+                  <button id="bregistrarchofer" class="main-button">Registrar</button>
+                </fieldset>
               </div>
             </div>
           </form>
@@ -119,45 +125,45 @@ https://templatemo.com/tm-580-woox-travel
             <tbody class="text-center">
               <!-- aquí va el for para las consultas de la tabla -->
               <tr>
-                <td style="font-size: 13px;" >Aquí va el nombre completo</td>
+                <td style="font-size: 13px;">Aquí va el nombre completo</td>
                 <td class="text-center align-middle" style="max-height: 60px;height: 60px;">
-                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href="" title="Ver detalles">
-                      <i class="far fa-eye"></i>
+                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href=""
+                    title="Ver detalles">
+                    <i class="far fa-eye"></i>
                   </a>
-                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href="" title="Editar">
+                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href=""
+                    title="Editar">
                     <i class="fas fa-pen"></i>
-                </a>
-                  <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
-                    role="button" data-bs-toggle="modal" data-bss-tooltip=""
-                    style="margin-left: 3px;" data-bs-target="#delete-modal"
+                  </a>
+                  <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" role="button"
+                    data-bs-toggle="modal" data-bss-tooltip="" style="margin-left: 3px;" data-bs-target="#delete-modal"
                     title="Eliminar" onclick="">
-                    <i class="fas fa-trash btnNoBorders"
-                      style="color: #DC3545;"></i>
+                    <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i>
                   </button>
                 </td>
               </tr>
 
-               <tr  >
+              <tr>
                 <!--<td style="font-size: 13px;" >Aquí va el nombre completo</td>-->
-                <td style="font-size: 13px;" >Aquí va el número de pedido</td>
-                <td style="font-size: 13px;" >Aquí va el precio por kg</td>
-                <td id ="tdBotones" class="text-center align-middle" style="max-height: 60px;height: 60px;">
-                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href="" title="Ver detalles">
-                      <i class="far fa-eye"></i>
+                <td style="font-size: 13px;">Aquí va el número de pedido</td>
+                <td style="font-size: 13px;">Aquí va el precio por kg</td>
+                <td id="tdBotones" class="text-center align-middle" style="max-height: 60px;height: 60px;">
+                  <a class="btn btnMaterial btn-flat primary semicircle" role="button" data-bs-toggle="tooltip" href=""
+                    title="Ver detalles">
+                    <i class="far fa-eye"></i>
                   </a>
-                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href="" title="Editar">
+                  <a class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-toggle="tooltip" href=""
+                    title="Editar">
                     <i class="fas fa-pen"></i>
-                </a>
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
-                                                        role="button" data-bs-toggle="modal" data-bss-tooltip=""
-                                                        style="margin-left: 3px;" data-bs-target="#delete-modal"
-                                                        title="Eliminar" onclick="">
-                                                        <i class="fas fa-trash btnNoBorders"
-                                                            style="color: #DC3545;"></i>
-                                                    </button>
+                  </a>
+                  <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" role="button"
+                    data-bs-toggle="modal" data-bss-tooltip="" style="margin-left: 3px;" data-bs-target="#delete-modal"
+                    title="Eliminar" onclick="">
+                    <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i>
+                  </button>
                 </td>
-              </tr> 
-              
+              </tr>
+
 
             </tbody>
           </table>
@@ -165,22 +171,129 @@ https://templatemo.com/tm-580-woox-travel
       </div>
     </div>
   </div>
-  
+
 
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2022<a href="#"> Cyberpunks</a> Company. All rights reserved. 
+          <p>Copyright © 2022<a href="#"> Cyberpunks</a> Company. All rights reserved.
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- The Modal -->
+  <div class="modal" id="modalRegistrarPrestamo">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registrar préstamo</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style="text-align:left; color:black;">
+
+          <div class="col-lg-6">
+            <fieldset>
+
+              <label for="idChofer" class="form-label">ID chofer</label></br>
+              <input id="idChofer" type="text" name="idChofer" class="idChofer" autocomplete="on" required disabled>
+            </fieldset>
+            <fieldset>
+              <label for="montoPres" class="form-label">Monto</label></br>
+              <input id="montoPres" type="number" name="montoPres" class="montoPres" autocomplete="on" required>
+            </fieldset>
+            <fieldset>
+              <label for="descripcionPres" class="form-label">Descripción</label></br>
+              <input id="descripcionPres" type="text" name="descripcionPres" class="descripcionPres" autocomplete="on"
+                required>
+
+            </fieldset>
+          </div>
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button id="btnRegistarPrestamo" type="button" class="btn btn-success"
+            data-bs-dismiss="modal">Guardar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The Modal -->
+  <div class="modal" id="modalExitoRegistro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registro exitoso</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style="text-align:left; color:black;">
+
+          <div class="col-lg-6">
+            <fieldset>
+
+              <h4>El préstamo realizado</h4>
+
+            </fieldset>
+          </div>
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- The Modal -->
+  <div class="modal" id="modalEliminar">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Eliminado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style="text-align:left; color:black;">
+
+          <div class="col-lg-6">
+            <fieldset>
+
+              <h4>El chofer se ha eliminado correctamente</h4>
+
+            </fieldset>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js" ></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
   <script src="assets/js/isotope.min.js"></script>
@@ -191,15 +304,15 @@ https://templatemo.com/tm-580-woox-travel
   <script src="assets/js/custom.js"></script>
 
   <script>
-    $(".option").click(function(){
+    $(".option").click(function () {
       $(".option").removeClass("active");
-      $(this).addClass("active"); 
+      $(this).addClass("active");
     });
   </script>
 
   <!-- Script para registrar chofer -->
   <script src="scripts/registroChofer.js"></script>
 
-  </body>
+</body>
 
 </html>

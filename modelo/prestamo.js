@@ -7,7 +7,10 @@ const Prestamo = sequelize.define("Prestamo",{
         primaryKey : true
     },
     monto : { type: DataTypes.DOUBLE},
-    fecha : { type: DataTypes.DATE },
+    fecha : { 
+        type: DataTypes.DATE, 
+        defaultValue: new Date()
+    },
     detalle : { type : DataTypes.STRING},
     idChofer : { type : DataTypes.STRING}
  
